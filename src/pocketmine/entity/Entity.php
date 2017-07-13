@@ -224,6 +224,7 @@ abstract class Entity extends Location implements Metadatable{
 		Entity::registerEntity(EnderCrystal::class);
 		Entity::registerEntity(Enderman::class);
 		Entity::registerEntity(Endermite::class);
+		Entity::registerEntity(Evoker::class);
 		Entity::registerEntity(ExperienceOrb::class);
 		Entity::registerEntity(FallingSand::class);
 		Entity::registerEntity(FishingHook::class);
@@ -269,7 +270,9 @@ abstract class Entity extends Location implements Metadatable{
 		Entity::registerEntity(LingeringPotion::class);
 		Entity::registerEntity(ThrownPotion::class);
 		Entity::registerEntity(TripoidCamera::class);
+		Entity::registerEntity(Vex::class);
 		Entity::registerEntity(Villager::class);
+		Entity::registerEntity(Vindicator::class);
 		Entity::registerEntity(Witch::class);
 		Entity::registerEntity(Wither::class);
 		Entity::registerEntity(WitherSkeleton::class);
