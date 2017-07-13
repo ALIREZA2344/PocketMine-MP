@@ -2,6 +2,7 @@
 namespace pocketmine\entity;
 
 use pocketmine\item\Item as ItemItem;
+use pocketmine\nbt\tag\IntTag;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 
@@ -53,4 +54,13 @@ class Horse extends Animal implements Rideable, Ageable {
     public function canBeLeashed() {
     	return true; //TODO: distance check, already leashed check
     }
+
+	public function setType($value){
+		$this->namedtag->Type = new IntTag("Type", $value);
+		$this->setDataProperty(self::DATA_VARIANT, self::DATA_TYPE_BYTE, $value);
+	}
+
+	public function getType(){
+		return $this->namedtag["Type"];
+	}
 }
