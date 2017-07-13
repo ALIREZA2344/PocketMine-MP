@@ -15,6 +15,14 @@ class MinecartChest extends Snake{
         parent::initEntity();
     }
 
+	public function getName(){
+		return "Minecart Chest";
+	}
+
+	public function getCodeName(){
+		return "chest_minecart";
+	}
+
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->type = self::NETWORK_ID;
@@ -32,10 +40,6 @@ class MinecartChest extends Snake{
 
 		parent::spawnTo($player);
 	}
-
-    public function getName(){
-        return "Minecart Chest";
-    }
 
     public function onUpdate($currentTick){
     	if($this->isAlive()){

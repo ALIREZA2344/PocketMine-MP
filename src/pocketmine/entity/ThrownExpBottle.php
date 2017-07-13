@@ -12,10 +12,6 @@ use pocketmine\Player;
 
 class ThrownExpBottle extends Projectile{
 	const NETWORK_ID = 68;
-
-	public $width = 0.25;
-	public $length = 0.25;
-	public $height = 0.25;
 	
 	protected $gravity = 0.1;
 	protected $drag = 0.05;
@@ -25,7 +21,11 @@ class ThrownExpBottle extends Projectile{
 	}
 
 	public function getName(){
-		return "Thrown Exp Bottle";
+		return "Thrown Experience Bottle";
+	}
+
+	public function getCodeName(){
+		return "xp_bottle";
 	}
 
 	public function onUpdate($currentTick){

@@ -34,25 +34,11 @@ use pocketmine\Player;
 class PrimedTNT extends Entity implements Explosive{
 	const NETWORK_ID = 65;
 
-	public $width = 0.98;
-	public $length = 0.98;
-	public $height = 0.98;
-
 	protected $baseOffset = 0.49;
-
 	protected $gravity = 0.04;
 	protected $drag = 0.02;
-
 	protected $fuse;
-
 	public $canCollide = false;
-
-
-	public function attack($damage, EntityDamageEvent $source){
-		if($source->getCause() === EntityDamageEvent::CAUSE_VOID){
-			parent::attack($damage, $source);
-		}
-	}
 
 	protected function initEntity(){
 		parent::initEntity();
@@ -69,6 +55,19 @@ class PrimedTNT extends Entity implements Explosive{
 		$this->level->broadcastLevelEvent($this, LevelEventPacket::EVENT_SOUND_IGNITE);
 	}
 
+	public function getName(){
+		return "Primed TNT";
+	}
+
+	public function getCodeName(){
+		return "tnt";
+	}
+
+	public function attack($damage, EntityDamageEvent $source){
+		if($source->getCause() === EntityDamageEvent::CAUSE_VOID){
+			parent::attack($damage, $source);
+		}
+	}
 
 	public function canCollideWith(Entity $entity){
 		return false;
@@ -154,10 +153,6 @@ class PrimedTNT extends Entity implements Explosive{
 		}
 		$this->close();
 	}
-
-    public function getName(){
-        return "Primed TNT";
-    }
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

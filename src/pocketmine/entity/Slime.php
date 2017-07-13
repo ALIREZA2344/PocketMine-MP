@@ -12,7 +12,7 @@ class Slime extends Living{
 
     public $height = 2;
     public $width = 2;
-    public $lenght = 2;//TODO: Size
+    public $lenght = 2;//TODO: Size by data
 	
 	protected $exp_min = 1;
 	protected $exp_max = 1;//TODO: Size
@@ -28,6 +28,10 @@ class Slime extends Living{
     public function getName(){
         return "Slime";
     }
+
+	public function getCodeName(){
+		return "slime";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

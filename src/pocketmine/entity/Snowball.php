@@ -31,10 +31,6 @@ use pocketmine\Player;
 class Snowball extends Projectile{
 	const NETWORK_ID = 81;
 
-	public $width = 0.25;
-	public $length = 0.25;
-	public $height = 0.25;
-
 	protected $gravity = 0.03;
 	protected $drag = 0.01;
 
@@ -45,6 +41,10 @@ class Snowball extends Projectile{
     public function getName(){
         return "Snowball";
     }
+
+	public function getCodeName(){
+		return "snowball";
+	}
 
 	public function onUpdate($currentTick){
 		if($this->closed){

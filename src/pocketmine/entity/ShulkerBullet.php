@@ -9,12 +9,16 @@ use pocketmine\Player;
 class ShulkerBullet extends Projectile{
 	const NETWORK_ID = 76;
 
-	public $width = 0.5;
-	public $length = 0.5;
-	public $height = 0.5;
-
 	public function __construct(Level $level, CompoundTag $nbt){
 		parent::__construct($level, $nbt);
+	}
+
+	public function getName(){
+		return "Shulker Bullet";
+	}
+
+	public function getCodeName(){
+		return "shulker_bullet";
 	}
 
 	public function onUpdate($currentTick){
@@ -34,10 +38,6 @@ class ShulkerBullet extends Projectile{
 		$this->timings->stopTiming();
 
 		return $hasUpdate;
-	}
-
-	public function getName(){
-		return "Shulker Bullet";
 	}
 
 	public function spawnTo(Player $player){

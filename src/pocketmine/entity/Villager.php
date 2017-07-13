@@ -36,21 +36,21 @@ class Villager extends Creature implements NPC, Ageable{
 	const PROFESSION_GENERIC = 5;
 
 	const NETWORK_ID = 15;
-
-	public $width = 0.6;
-	public $length = 0.6;
-	public $height = 1.8;
 	protected $maxHealth = 20;
-
-	public function getName(){
-		return "Villager";
-	}
 
 	protected function initEntity(){
 		parent::initEntity();
 		if(!isset($this->namedtag->Profession)){
 			$this->setProfession(self::PROFESSION_GENERIC);
 		}
+	}
+
+	public function getName(){
+		return "Villager";
+	}
+
+	public function getCodeName(){
+		return "villager";
 	}
 
 	public function spawnTo(Player $player){

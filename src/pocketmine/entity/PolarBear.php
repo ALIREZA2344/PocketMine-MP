@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class PolarBear extends Monster{
 	const NETWORK_ID = 28;
-
-	public $width = 1.031;
-	public $length = 0.891;
-	public $height = 2;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -22,6 +18,10 @@ class PolarBear extends Monster{
 
 	public function getName(){
 		return "Polar Bear";
+	}
+
+	public function getCodeName(){
+		return "polar_bear";
 	}
 
 	public function spawnTo(Player $player){

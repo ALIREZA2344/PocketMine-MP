@@ -7,12 +7,16 @@ use pocketmine\Player;
 class Lightning extends Entity{
 	const NETWORK_ID = 93;
 
-	public $width = 0;
-	public $length = 0;//TODO
-	public $height = 0;
-
 	public function initEntity(){
 		parent::initEntity();
+	}
+
+	public function getName(){
+		return "Lightning";
+	}
+
+	public function getCodeName(){//this class is weird.. its missing data!
+		return "lightning_bolt";
 	}
 
 	public function spawnTo(Player $player){

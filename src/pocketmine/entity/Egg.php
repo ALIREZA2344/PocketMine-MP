@@ -9,9 +9,7 @@ use pocketmine\Player;
 
 class Egg extends Projectile{
 	const NETWORK_ID = 82;
-	public $width = 0.25;
-	public $length = 0.25;
-	public $height = 0.25;
+
 	protected $gravity = 0.03;
 	protected $drag = 0.01;
 
@@ -53,6 +51,14 @@ class Egg extends Projectile{
 		$this->timings->stopTiming();
 		
 		return $hasUpdate;
+	}
+
+	public function getName(){
+		return "Egg";
+	}
+
+	public function getCodeName(){
+		return "egg";
 	}
 
 	public function spawnTo(Player $player){

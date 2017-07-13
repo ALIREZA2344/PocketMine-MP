@@ -6,10 +6,6 @@ use pocketmine\Player;
 
 class Witch extends Monster implements ProjectileSource{
     const NETWORK_ID = 45;
-
-    public $width = 0.938;
-    public $length = 0.609;
-    public $height = 2;
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -22,6 +18,10 @@ class Witch extends Monster implements ProjectileSource{
  	public function getName(){
         return "Witch";
     }
+
+	public function getCodeName(){
+		return "witch";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

@@ -34,9 +34,6 @@ use pocketmine\Player;
 class Squid extends WaterAnimal{
 	const NETWORK_ID = 17;
 
-	public $width = 0.95;
-	public $length = 0.95;
-	public $height = 0.95;
 	protected $maxHealth = 5;
 
 	/** @var Vector3 */
@@ -52,6 +49,10 @@ class Squid extends WaterAnimal{
 
 	public function getName(){
 		return "Squid";
+	}
+
+	public function getCodeName(){
+		return "squid";
 	}
 
 	public function attack($damage, EntityDamageEvent $source){

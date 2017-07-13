@@ -27,6 +27,10 @@ class Creeper extends Monster implements Explosive{
         return "Creeper";
     }
 
+	public function getCodeName(){
+		return "creeper";
+	}
+
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->type = self::NETWORK_ID;

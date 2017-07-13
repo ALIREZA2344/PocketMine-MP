@@ -15,6 +15,14 @@ class MinecartHopper extends Snake{
         parent::initEntity();
     }
 
+	public function getName(){
+		return "Minecart Hopper";
+	}
+
+	public function getCodeName(){
+		return "hopper_minecart";
+	}
+
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->type = self::NETWORK_ID;
@@ -32,10 +40,6 @@ class MinecartHopper extends Snake{
 
 		parent::spawnTo($player);
 	}
-
-    public function getName(){
-        return "Minecart Hopper";
-    }
 
     public function onUpdate($currentTick){
     	if($this->isAlive()){

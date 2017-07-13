@@ -26,6 +26,7 @@ declare(strict_types=1);
  */
 namespace pocketmine\entity;
 
+use function PMA\Util\get;
 use pocketmine\block\Block;
 use pocketmine\block\Water;
 use pocketmine\event\entity\EntityDamageEvent;
@@ -62,6 +63,7 @@ use pocketmine\Player;
 use pocketmine\plugin\Plugin;
 use pocketmine\Server;
 use pocketmine\utils\Binary;
+use pocketmine\utils\Config;
 
 abstract class Entity extends Location implements Metadatable{
 
@@ -404,6 +406,11 @@ abstract class Entity extends Location implements Metadatable{
 		$this->server = $level->getServer();
 
 		$this->boundingBox = new AxisAlignedBB(0, 0, 0, 0, 0, 0);
+		//TODO data via components
+		$collisionBox = $this->getComponent("collision_box");
+		$this->width = $collisionBox["width"];
+		$this->height = $collisionBox["height"];
+		//TODO data end
 		$this->setPositionAndRotation(
 			$this->temporalVector->setComponents(
 				$this->namedtag["Pos"][0],
@@ -2023,6 +2030,27 @@ abstract class Entity extends Location implements Metadatable{
 
 	public function removeMetadata($metadataKey, Plugin $plugin){
 		$this->server->getEntityMetadata()->removeMetadata($this, $metadataKey, $plugin);
+	}
+
+	public function getParserData($codeName){
+		//todo cache
+		$currentVersion = (new Config($this->server->getFilePath() . "src/pocketmine/resources/parserdata.json"))->get("format_version", "-1");
+		$config = new Config($this->server->getFilePath() . "src/pocketmine/resources/entities/".$codeName.".json");
+		if(assert(empty($config->getAll()), "No data for \"$codeName\" was found")){
+			if(assert(version_compare($config->getNested("minecraft:entity.format_version", "0.0.0"), $currentVersion, "=="), "parserdata or entity data outdated")){
+				var_dump($config->getAll());
+				return $config;
+			}
+		}
+		return null;
+	}
+
+	public function getComponent(string $component){
+		return $this->getParserData($this->getCodeName())->getNested("components.minecraft:" . $component);
+	}
+
+	public function getCodeName(){
+		return "default";//TODO modify default entity
 	}
 
 	public function __toString(){

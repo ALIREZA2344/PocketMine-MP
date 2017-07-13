@@ -12,9 +12,6 @@ use pocketmine\Player;
 class EnderCrystal extends Living implements Explosive{
 	const NETWORK_ID = 71;
 
-	public $height = 1;
-	public $width = 1;
-	public $length = 1;//TODO: Size
 	protected $maxHealth = 1;
 	
 	public function __construct(Level $level, CompoundTag $nbt){
@@ -27,6 +24,10 @@ class EnderCrystal extends Living implements Explosive{
 
 	public function getName(){
 		return "Ender Crystal";
+	}
+
+	public function getCodeName(){
+		return "ender_crystal";
 	}
 
 	public function kill(){

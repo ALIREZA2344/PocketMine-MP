@@ -6,10 +6,6 @@ use pocketmine\Player;
 
 class Endermite extends Monster{
     const NETWORK_ID = 55;
-
-    public $height = 0.438;
-    public $width = 0.609;
-    public $lenght = 1.094;
 	
 	protected $exp_min = 3;
 	protected $exp_max = 3;
@@ -22,6 +18,10 @@ class Endermite extends Monster{
  	public function getName(){
         return "Endermite";
     }
+
+	public function getCodeName(){
+		return "endermite";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

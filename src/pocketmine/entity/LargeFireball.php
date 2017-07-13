@@ -7,10 +7,6 @@ use pocketmine\Player;
 class LargeFireball extends Projectile {
 	const NETWORK_ID = 85;
 
-	public $height = 1.5;
-	public $width = 1.25;
-	public $lenght = 0.906;//TODO
-
 	public function initEntity(){
 		parent::initEntity();
 	}
@@ -18,6 +14,10 @@ class LargeFireball extends Projectile {
 	public function getName(){
 		return "LargeFireball";
  	}
+
+	public function getCodeName(){
+		return "fireball";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

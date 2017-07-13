@@ -9,9 +9,7 @@ use pocketmine\Player;
 
 class Sheep extends Animal implements Colorable{
 	const NETWORK_ID = 13;
-	public $lenght = 1.484;
-	public $width = 0.719;
-	public $height = 1.406;
+
 	protected $exp_min = 1;
 	protected $exp_max = 3;
 	protected $maxHealth = 8;
@@ -27,6 +25,10 @@ class Sheep extends Animal implements Colorable{
 
 	public function getName(){
 		return "Sheep";
+	}
+
+	public function getCodeName(){
+		return "sheep";
 	}
 
 	public function spawnTo(Player $player){

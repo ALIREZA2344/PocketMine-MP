@@ -6,10 +6,6 @@ use pocketmine\Player;
 
 class EnderDragon extends Monster implements ProjectileSource{
     const NETWORK_ID = 53;
-
-    public $height = 2;
-    public $width = 3;
-    public $lenght = 1;//TODO: check
 	
 	protected $exp_min = 12500;
 	protected $exp_max = 12500;
@@ -22,6 +18,10 @@ class EnderDragon extends Monster implements ProjectileSource{
  	public function getName(){
         return "Ender Dragon";
     }
+
+	public function getCodeName(){
+		return "ender_dragon";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

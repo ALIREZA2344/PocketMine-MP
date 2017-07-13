@@ -13,9 +13,7 @@ use pocketmine\Player;
 class ThrownPotion extends Projectile {
 	const NETWORK_ID = 86;
 	const DATA_POTION_ID = 16;//TODO: update this
-	public $width = 0.25;
-	public $length = 0.25;
-	public $height = 0.25;
+
 	protected $gravity = 0.1;
 	protected $drag = 0.05;
 
@@ -26,6 +24,14 @@ class ThrownPotion extends Projectile {
 		parent::__construct($level, $nbt, $shootingEntity);
 		unset($this->dataProperties[self::DATA_SHOOTER_ID]);
 		$this->setDataProperty(self::DATA_POTION_ID, self::DATA_TYPE_SHORT, $this->getPotionId());
+	}
+
+	public function getName(){
+		return "Splash Potion";
+	}
+
+	public function getCodeName(){
+		return "splash_potion";
 	}
 
 	public function getPotionId() {

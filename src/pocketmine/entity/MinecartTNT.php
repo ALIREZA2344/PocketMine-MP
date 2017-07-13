@@ -8,8 +8,7 @@ use pocketmine\Player;
 
 class MinecartTNT extends Snake{
 	const NETWORK_ID = 97;
-	public $height = 0.9;
-	public $width = 1.1;
+
 	protected $maxHealth = 4;
 	public $drag = 0.1;
 	public $gravity = 0.5;
@@ -20,6 +19,14 @@ class MinecartTNT extends Snake{
 
 	public function initEntity(){
 		parent::initEntity();
+	}
+
+	public function getName(){
+		return "Minecart TNT";
+	}
+
+	public function getCodeName(){
+		return "tnt_minecart";
 	}
 
 	public function spawnTo(Player $player){
@@ -38,10 +45,6 @@ class MinecartTNT extends Snake{
 		$player->dataPacket($pk);
 
 		parent::spawnTo($player);
-	}
-
-	public function getName(){
-		return "Minecart TNT";
 	}
 
 	public function getDrops(){

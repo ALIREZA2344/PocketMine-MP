@@ -25,6 +25,10 @@ class Husk extends Monster{
 		return "Husk";
 	}
 
+	public function getCodeName(){
+		return "husk";
+	}
+
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->type = self::NETWORK_ID;

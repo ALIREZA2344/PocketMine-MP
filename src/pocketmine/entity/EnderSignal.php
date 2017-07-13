@@ -42,6 +42,10 @@ class EnderSignal extends Entity{
 		return "Eye of Ender";
 	}
 
+	public function getCodeName(){
+		return "eye_of_ender_signal";
+	}
+
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->type = self::NETWORK_ID;

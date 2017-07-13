@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class Spider extends Monster{
     const NETWORK_ID = 35;
-
-    public $width = 2.062;
-    public $length = 1.703;
-    public $height = 0.781;
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -23,6 +19,10 @@ class Spider extends Monster{
     public function getName(){
         return "Spider";
     }
+
+	public function getCodeName(){
+		return "spider";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

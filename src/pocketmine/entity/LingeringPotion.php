@@ -17,9 +17,7 @@ use pocketmine\Player;
 class LingeringPotion extends Projectile {
 	const NETWORK_ID = 101;
 	const DATA_POTION_ID = 16;//TODO: update this
-	public $width = 0.25;
-	public $length = 0.25;
-	public $height = 0.25;
+
 	protected $gravity = 0.1;
 	protected $drag = 0.05;
 
@@ -31,6 +29,14 @@ class LingeringPotion extends Projectile {
 		unset($this->dataProperties[self::DATA_SHOOTER_ID]);
 		$this->setDataProperty(self::DATA_VARIANT, self::DATA_TYPE_SHORT, $this->getPotionId());
 		$this->setDataFlag(self::DATA_FLAGS, self::DATA_FLAG_LINGER);
+	}
+
+	public function getName(){
+		return "Lingering Potion";
+	}
+
+	public function getCodeName(){
+		return "lingering_potion";
 	}
 
 	public function getPotionId() {

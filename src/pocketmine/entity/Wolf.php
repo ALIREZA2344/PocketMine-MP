@@ -6,10 +6,6 @@ use pocketmine\Player;
 
 class Wolf extends Animal implements Tameable,Colorable{
 	const NETWORK_ID = 14;
-
-	public $height = 0.969;
-	public $width = 0.5;
-	public $lenght = 1.594;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -21,6 +17,10 @@ class Wolf extends Animal implements Tameable,Colorable{
 
 	public function getName(){
 		return "Wolf";
+	}
+
+	public function getCodeName(){
+		return "wolf";
 	}
 
 	public function spawnTo(Player $player){

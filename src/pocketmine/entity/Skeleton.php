@@ -9,10 +9,6 @@ use pocketmine\Player;
 
 class Skeleton extends Monster implements ProjectileSource{
     const NETWORK_ID = 34;
-
-    public $height = 2;
-    public $width = 0.781;
-    public $lenght = 0.875;
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -25,6 +21,10 @@ class Skeleton extends Monster implements ProjectileSource{
  	public function getName(){
         return "Skeleton";
     }
+
+	public function getCodeName(){
+		return "skeletonv";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

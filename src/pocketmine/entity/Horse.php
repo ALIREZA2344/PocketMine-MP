@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class Horse extends Animal implements Rideable, Ageable {
     const NETWORK_ID = 23;
-
-    public $width = 0.75;
-    public $height = 1.562;
-    public $lenght = 1.5;//TODO
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;//TODO
@@ -23,6 +19,10 @@ class Horse extends Animal implements Rideable, Ageable {
     public function getName(){
         return "Horse";//TODO: Name by type
     }
+
+	public function getCodeName(){
+		return "horse";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

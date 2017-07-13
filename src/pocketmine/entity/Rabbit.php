@@ -16,10 +16,6 @@ class Rabbit extends Animal{
     const TYPE_SPOTTED = 3;
     const TYPE_SALT_PEPPER = 4;
     const TYPE_GOLDEN = 5;
-
-    public $height = 0.5;
-    public $width = 0.5;
-    public $lenght = 0.5;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -37,6 +33,10 @@ class Rabbit extends Animal{
     public function getName(){
         return "Rabbit";
     }
+
+	public function getCodeName(){
+		return "rabbit";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

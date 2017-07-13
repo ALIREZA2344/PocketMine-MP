@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class Chicken extends Animal{
 	const NETWORK_ID = 10;
-
-	public $width = 1;
-	public $length = 0.5;
-	public $height = 0.8;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -23,6 +19,10 @@ class Chicken extends Animal{
 
 	public function getName(){
 		return "Chicken";
+	}
+
+	public function getCodeName(){
+		return "chicken";
 	}
 
 	public function spawnTo(Player $player){

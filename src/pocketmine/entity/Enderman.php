@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class Enderman extends Monster{
 	const NETWORK_ID = 38;
-
-	public $height = 2.875;
-	public $width = 1.094;
-	public $lenght = 0.5;
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -28,6 +24,10 @@ class Enderman extends Monster{
 
 	public function getName(){
 		return "Enderman";
+	}
+
+	public function getCodeName(){
+		return "enderman";
 	}
 
 	public function spawnTo(Player $player){

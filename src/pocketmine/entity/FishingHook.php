@@ -9,9 +9,7 @@ use pocketmine\Player;
 
 class FishingHook extends Projectile{
 	const NETWORK_ID = 77;
-	public $width = 0.25;
-	public $length = 0.25;
-	public $height = 0.25;
+
 	protected $gravity = 0.1;
 	protected $drag = 0.05;
 	public $data = 0;
@@ -21,6 +19,14 @@ class FishingHook extends Projectile{
 
 	public function initEntity(){
 		parent::initEntity();
+	}
+
+	public function getName(){
+		return "Fishing Hook";
+	}
+
+	public function getCodeName(){
+		return "fishing_hook";
 	}
 
 	public function __construct(Level $level, CompoundTag $nbt, Entity $shootingEntity = null){

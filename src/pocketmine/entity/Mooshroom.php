@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class Mooshroom extends Animal{
 	const NETWORK_ID = 16;
-
-	public $height = 1.875;
-	public $width = 0.891;
-	public $lenght = 1.781;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -23,6 +19,10 @@ class Mooshroom extends Animal{
 
 	public function getName(){
 		return "Mooshroom";
+	}
+
+	public function getCodeName(){
+		return "mooshroom";
 	}
 
 	public function spawnTo(Player $player){

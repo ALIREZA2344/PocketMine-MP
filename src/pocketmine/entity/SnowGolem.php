@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class SnowGolem extends Animal{
     const NETWORK_ID = 21;
-
-    public $height = 1.875;
-    public $width = 1.281;
-    public $lenght = 0.688;
 	
 	protected $exp_min = 0;
 	protected $exp_max = 0;
@@ -23,6 +19,10 @@ class SnowGolem extends Animal{
     public function getName(){
         return "Snow Golem";
     }
+
+	public function getCodeName(){
+		return "snow_golem";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

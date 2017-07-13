@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class WitherSkeleton extends Monster implements ProjectileSource{
     const NETWORK_ID = 48;
-
-    public $height = 2;
-    public $width = 0.781;
-    public $lenght = 0.875;
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -24,6 +20,10 @@ class WitherSkeleton extends Monster implements ProjectileSource{
  	public function getName(){
         return "Wither Skeleton";
     }
+
+	public function getCodeName(){
+		return "wither_skeleton";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

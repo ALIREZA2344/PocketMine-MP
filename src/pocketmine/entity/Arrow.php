@@ -31,10 +31,6 @@ use pocketmine\Player;
 class Arrow extends Projectile{
 	const NETWORK_ID = 80;
 
-	public $width = 0.5;
-	public $length = 0.5;
-	public $height = 0.5;
-
 	protected $gravity = 0.05;
 	protected $drag = 0.01;
 
@@ -43,6 +39,10 @@ class Arrow extends Projectile{
 	public function __construct(Level $level, CompoundTag $nbt, Entity $shootingEntity = null, bool $critical = false){
 		parent::__construct($level, $nbt, $shootingEntity);
 		$this->setCritical($critical);
+	}
+
+	public function getCodeName(){
+		return "arrow";
 	}
 
 	public function isCritical() : bool{

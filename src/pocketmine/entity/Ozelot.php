@@ -12,10 +12,6 @@ class Ozelot extends Animal implements Tameable{
 	const TYPE_BLACK = 1;
 	const TYPE_ORANGE = 2;
 	const TYPE_SIAMESE = 3;
-
-	public $width = 0.312;
-	public $length = 2.188;
-	public $height = 0.75;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -36,6 +32,10 @@ class Ozelot extends Animal implements Tameable{
 
 	public function getName(){
 		return "Ocelot";
+	}
+
+	public function getCodeName(){
+		return "ocelot";
 	}
 
 	public function spawnTo(Player $player){

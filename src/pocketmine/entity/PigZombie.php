@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class PigZombie extends Monster{
     const NETWORK_ID = 36;
-
-    public $height = 2.03;
-    public $width = 1.031;
-    public $lenght = 1.125;
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -24,6 +20,10 @@ class PigZombie extends Monster{
     public function getName(){
         return "Zombie Pigman";
     }
+
+	public function getCodeName(){
+		return "zombie_pigman";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

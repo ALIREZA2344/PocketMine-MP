@@ -8,10 +8,6 @@ use pocketmine\Player;
 class Ghast extends Monster{
 	const NETWORK_ID = 41;
 
-	public $width = 4.5;
-	public $length = 4.5;
-	public $height = 4.5;
-
  	public static $range = 16;
 	public static $speed = 0.25;
 	public static $jump = 1.8;
@@ -27,6 +23,10 @@ class Ghast extends Monster{
 
 	public function getName(){
 		return "Ghast";
+	}
+
+	public function getCodeName(){
+		return "ghast";
 	}
 
 	public function spawnTo(Player $player){

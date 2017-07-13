@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class Guardian extends WaterAnimal implements Ageable{
 	const NETWORK_ID = 49;
-
-	public $width = 0.75;
-	public $length = 0.75;
-	public $height = 1;
 	
 	protected $exp_min = 10;
 	protected $exp_max = 10;
@@ -23,6 +19,10 @@ class Guardian extends WaterAnimal implements Ageable{
 
 	public function getName(){
 		return "Guardian";
+	}
+
+	public function getCodeName(){
+		return "guardian";
 	}
 
 	public function spawnTo(Player $player){

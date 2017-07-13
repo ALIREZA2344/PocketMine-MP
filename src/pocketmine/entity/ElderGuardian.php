@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class ElderGuardian extends Guardian{
 	const NETWORK_ID = 50;
-
-	public $width = 0.75;
-	public $length = 0.75;
-	public $height = 1;
 	
 	protected $exp_min = 10;
 	protected $exp_max = 10;
@@ -24,6 +20,10 @@ class ElderGuardian extends Guardian{
 
 	public function getName(){
 		return "Elder Guardian";
+	}
+
+	public function getCodeName(){
+		return "elder_guardian";
 	}
 
 	public function spawnTo(Player $player){

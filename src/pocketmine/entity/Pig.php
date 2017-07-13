@@ -8,10 +8,6 @@ use pocketmine\Player;
 
 class Pig extends Animal implements Rideable{
     const NETWORK_ID = 12;
-
-    public $width = 0.625;
-    public $height = 1;
-    public $lenght = 1.5;
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;
@@ -24,6 +20,10 @@ class Pig extends Animal implements Rideable{
     public function getName(){
         return "Pig";
     }
+
+	public function getCodeName(){
+		return "pig";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

@@ -10,9 +10,6 @@ use pocketmine\Player;
 class TripoidCamera extends Snake{
     const NETWORK_ID = 62;
 
-    public $height = 1;
-    public $width = 1;
-    public $lenght = 1;//TODO: Size
 	protected $maxHealth = 1;
 	
 	public function __construct(Level $level, CompoundTag $nbt){
@@ -26,6 +23,10 @@ class TripoidCamera extends Snake{
     public function getName(){
         return "Tripoid Camera";
     }
+
+	public function getCodeName(){
+		return "tripoid_camera";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

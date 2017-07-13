@@ -8,9 +8,6 @@ use pocketmine\Player;
 class IronGolem extends Animal{
     const NETWORK_ID = 20;
 
-    public $height = 2.688;
-    public $width = 1.625;
-    public $lenght = 0.906;
 	protected $maxHealth = 100;
 
     public function initEntity(){
@@ -20,6 +17,10 @@ class IronGolem extends Animal{
     public function getName(){
         return "Iron Golem";
     }
+
+	public function getCodeName(){
+		return "iron_golem";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

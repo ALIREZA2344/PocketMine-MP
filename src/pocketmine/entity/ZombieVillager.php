@@ -7,10 +7,7 @@ use pocketmine\Player;
 
 class ZombieVillager extends Zombie{
 	const NETWORK_ID = 44;
-	
-	public $width = 1.031;
-	public $length = 0.891;
-	public $height = 2.125;
+
 	protected $maxHealth = 20;
 
 	public function initEntity(){
@@ -23,6 +20,10 @@ class ZombieVillager extends Zombie{
 
 	public function getName(){
 		return "Zombie Villager";
+	}
+
+	public function getCodeName(){
+		return "zombie_villager";
 	}
 
 	public function spawnTo(Player $player){

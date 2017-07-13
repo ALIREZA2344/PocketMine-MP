@@ -9,7 +9,7 @@ class Shulker extends Monster{
 
 	public $width = 1;
 	public $length = 1;
-	public $height = 1;
+	public $height = 1;//TODO: is missing collision
 	
 	protected $exp_min = 5;
 	protected $exp_max = 5;
@@ -21,6 +21,10 @@ class Shulker extends Monster{
 
 	public function getName(){
 		return "Shulker";
+	}
+
+	public function getCodeName(){
+		return "shulker";
 	}
 
 	public function spawnTo(Player $player){

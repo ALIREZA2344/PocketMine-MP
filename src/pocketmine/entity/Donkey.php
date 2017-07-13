@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class Donkey extends Horse{
     const NETWORK_ID = 24;
-
-    public $width = 0.75;
-    public $height = 1.562;
-    public $lenght = 1.5;//TODO
 	
 	protected $exp_min = 1;
 	protected $exp_max = 3;//TODO
@@ -23,6 +19,10 @@ class Donkey extends Horse{
     public function getName(){
         return "Donkey";
     }
+
+	public function getCodeName(){
+		return "donkey";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

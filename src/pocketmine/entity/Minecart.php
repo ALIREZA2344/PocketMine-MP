@@ -9,8 +9,6 @@ class Minecart extends Vehicle{
 
      const NETWORK_ID = 84;
 
-    public $height = 0.9;
-    public $width = 1.1;
 	protected $maxHealth = 4;
 
     public $drag = 0.1;
@@ -26,6 +24,14 @@ class Minecart extends Vehicle{
     public function initEntity(){
         parent::initEntity();
     }
+
+	public function getName(){
+		return "Minecart";
+	}
+
+	public function getCodeName(){
+		return "minecart";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
@@ -43,11 +49,7 @@ class Minecart extends Vehicle{
 		$player->dataPacket($pk);
 
 		parent::spawnTo($player);
-	}
-
-    public function getName(){
-        return "Minecart";
-    }/*
+	}/*
 
     public function onUpdate($currentTick){
         if($this->closed !== false){

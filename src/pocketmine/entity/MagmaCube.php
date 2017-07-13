@@ -12,7 +12,7 @@ class MagmaCube extends Living{
 
 	public $width = 2;
 	public $length = 2;
-	public $height = 2;//TODO: Size
+	public $height = 2;//TODO: By data. ComponentGROUPS are not working yet!
 	
 	protected $exp_min = 1;
 	protected $exp_max = 1; //TODO: Size

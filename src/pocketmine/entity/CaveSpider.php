@@ -24,6 +24,10 @@ class CaveSpider extends Monster{
 		return "Cave Spider";
 	}
 
+	public function getCodeName(){
+		return "cave_spider";
+	}
+
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->type = self::NETWORK_ID;

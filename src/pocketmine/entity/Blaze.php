@@ -7,10 +7,6 @@ use pocketmine\Player;
 
 class Blaze extends Monster{
 	const NETWORK_ID = 43;
-
-	public $height = 1.5;
-	public $width = 1.25;
-	public $lenght = 0.906;
 	
 	protected $exp_min = 10;
 	protected $exp_max = 10;
@@ -23,6 +19,10 @@ class Blaze extends Monster{
 	public function getName(){
 		return "Blaze";
  	}
+
+	public function getCodeName(){
+		return "blaze";
+	}
 
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();

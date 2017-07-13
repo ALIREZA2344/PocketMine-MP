@@ -11,12 +11,6 @@ use pocketmine\Player;
 class Boat extends Vehicle{
 	const NETWORK_ID = 90;
 
-	/*
-      "minecraft:collision_box": {
-        "width": 1.4,
-        "height": 0.455
-      },
-	*/
 	public $gravity = 0.5;
 	public $drag = 0.1;
 	protected $maxHealth = 4;
@@ -30,6 +24,14 @@ class Boat extends Vehicle{
 	
 	public function initEntity(){
 		parent::initEntity();
+	}
+
+	public function getName(){
+		return "Boat";
+	}
+
+	public function getCodeName(){
+		return "boat";
 	}
 
 	public function spawnTo(Player $player){
