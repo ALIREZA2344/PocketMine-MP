@@ -1,7 +1,7 @@
 <?php
 namespace pocketmine\entity;
 
-use pocketmine\nbt\tag\IntTag;
+use pocketmine\item\Item as ItemItem;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 
@@ -14,12 +14,6 @@ class Enderman extends Monster{
 
 	public function initEntity(){
 		parent::initEntity();
-		#for($i = 10; $i < 25; $i++){
-		#	$this->setDataProperty($i, self::DATA_TYPE_BYTE, 1);
-		#}
-		if(!isset($this->namedtag->Angry)){
-			$this->setAngry(false);
-		}
 	}
 
 	public function getName(){
@@ -48,20 +42,11 @@ class Enderman extends Monster{
 		parent::spawnTo($player);
 	}
 
-	/*public function getDrops(){
+	public function getDrops(){
 		return [
-			ItemItem::get(ItemItem::ENDERPEARL, 0, mt_rand(0, 1))
+			ItemItem::get(ItemItem::ENDER_PEARL, 0, mt_rand(0, 1))
 			// holding Block
 		];
-	}*/
-	
-	public function setAngry($angry = true){
-		$this->namedtag->Angry = new IntTag("Angry", $angry);
-		$this->setDataProperty(18, self::DATA_TYPE_BYTE, $angry);
-	}
-
-	public function getAngry(){
-		return $this->namedtag["Angry"];
 	}
 
 }
