@@ -5,7 +5,7 @@ use pocketmine\item\Item as ItemItem;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 
-class SkeletonHorse extends Animal /*implements Rideable*/{
+class SkeletonHorse extends Horse{
     const NETWORK_ID = 26;
 
     public $width = 0.75;
@@ -21,7 +21,7 @@ class SkeletonHorse extends Animal /*implements Rideable*/{
     }
 
     public function getName(){
-        return "Skeleton Horse";//TODO: Name by type
+        return "Skeleton Horse";
     }
 
 	public function spawnTo(Player $player){

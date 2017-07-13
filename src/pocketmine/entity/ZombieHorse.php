@@ -5,7 +5,7 @@ use pocketmine\item\Item as ItemItem;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 
-class ZombieHorse extends Animal /*implements Rideable*/{
+class ZombieHorse extends Horse{
     const NETWORK_ID = 27;
 
     public $width = 0.75;

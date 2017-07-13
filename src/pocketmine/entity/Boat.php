@@ -10,9 +10,13 @@ use pocketmine\Player;
 
 class Boat extends Vehicle{
 	const NETWORK_ID = 90;
-	
-	public $height = 0.7;
-	public $width = 1.6;
+
+	/*
+      "minecraft:collision_box": {
+        "width": 1.4,
+        "height": 0.455
+      },
+	*/
 	public $gravity = 0.5;
 	public $drag = 0.1;
 	protected $maxHealth = 4;
