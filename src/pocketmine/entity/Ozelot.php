@@ -27,7 +27,6 @@ class Ozelot extends Animal implements Tameable{
         if(!isset($this->namedtag->Type) || $this->getVariant() > 3){
             $this->setVariant(self::TYPE_NORMAL);
         }
-		$this->setDataProperty(16, self::DATA_TYPE_BYTE, $this->getVariant());
 	}
 
 	public function getName(){
@@ -65,8 +64,8 @@ class Ozelot extends Animal implements Tameable{
 	}
 
     public function setVariant($value){
-        $this->namedtag->Color = new IntTag("Type", $value);
-		$this->setDataProperty(16, self::DATA_TYPE_BYTE, $value);
+        $this->namedtag->Type = new IntTag("Type", $value);
+		$this->setDataProperty(self::DATA_VARIANT, self::DATA_TYPE_BYTE, $value);
     }
 
     public function getVariant(){
