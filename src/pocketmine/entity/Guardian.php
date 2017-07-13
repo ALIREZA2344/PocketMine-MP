@@ -6,7 +6,7 @@ use pocketmine\item\Item as ItemItem;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 
-class Guardian extends WaterAnimal implements Ageable{
+class Guardian extends Monster{
 	const NETWORK_ID = 49;
 	
 	protected $exp_min = 10;

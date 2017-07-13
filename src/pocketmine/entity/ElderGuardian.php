@@ -6,7 +6,7 @@ use pocketmine\item\Item as ItemItem;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 
-class ElderGuardian extends Guardian{
+class ElderGuardian extends Monster{
 	const NETWORK_ID = 50;
 	
 	protected $exp_min = 10;
