@@ -236,6 +236,7 @@ abstract class Entity extends Location implements Metadatable{
 		Entity::registerEntity(LargeFireball::class);
 		Entity::registerEntity(LeashKnot::class);
 		Entity::registerEntity(Lightning::class);
+		Entity::registerEntity(LLama::class);
 		Entity::registerEntity(MagmaCube::class);
 		Entity::registerEntity(Minecart::class);
 		Entity::registerEntity(MinecartChest::class);
